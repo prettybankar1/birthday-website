@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Surprise 🎁</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #171717, #4b1942);
+            color: white;
+        }
+
+        .box {
+            width: 350px;
+            padding: 40px;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.1);
+            box-shadow: 0 0 30px rgba(255,255,255,0.2);
+        }
+
+        h1 {
+            font-size: 35px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            background: #ff4f81;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1>🤫 It's a Secret...</h1>
+
+        <p>
+            You made it happened in game, hope you get early success in future too!🤞
+        </p>
+
+        <p>
+            But there is still something waiting for you Mr.Om Suradkar...👑
+        </p>
+
+        <button onclick="openGame()">
+            Open the Surprise 🎁
+        </button>
+
+    </div>
+
+    <script>
+        function openGame() {
+            window.location.href = "game.html";
+        }
+    </script>
+
+</body>
+</html>

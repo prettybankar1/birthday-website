@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Birthday Website</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+        }
+
+        .login-box {
+            width: 320px;
+            padding: 35px;
+            text-align: center;
+            background: #222;
+            border-radius: 20px;
+            box-shadow: 0 0 25px #ff4f81;
+        }
+
+        h1 {
+            color: #ff7aa2;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            background: #ff4f81;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #error {
+            color: #ff6b6b;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-box">
+        <h1>🔐 Secret Website</h1>
+
+        <p>Enter the secret username and password</p>
+
+        <input type="text" id="username" placeholder="Username">
+
+        <input type="password" id="password" placeholder="Password">
+
+        <br>
+
+        <button onclick="login()">Enter 🎁</button>
+
+        <p id="error"></p>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "omvinodsuradkar" && password === "25082005") {
+                window.location.href = "surprise.html";
+            } else {
+                document.getElementById("error").innerText =
+                    "❌ Incorrect username or password";
+            }
+        }
+    </script>
+
+</body>
+</html>

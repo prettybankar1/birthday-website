@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Challenge 🎮</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffd1dc, #d9c2ff);
+            text-align: center;
+            color: #4a1942;
+        }
+
+        h1 {
+            margin-top: 30px;
+        }
+
+        #instruction {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        #game {
+            width: 360px;
+            height: 360px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            border-radius: 15px;
+            font-size: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            user-select: none;
+        }
+
+        .number:hover {
+            transform: scale(1.05);
+        }
+
+        .correct {
+            background: #9cffb0;
+            pointer-events: none;
+        }
+
+        #message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.4);
+            width: 300px;
+        }
+
+        #message h2 {
+            color: #ff4f81;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            background: #ff4f81;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎮 Birthday Challenge</h1>
+
+    <p id="instruction">
+        Connect the numbers in order: <b>1 → 25</b>
+    </p>
+
+    <div id="game"></div>
+
+    <div id="message">
+        <h2>🎉 Congratulations!</h2>
+
+        <p>
+            You completed the challenge! 🤩
+        </p>
+
+        <p>
+            Are you ready for your final surprise? 🎁
+        </p>
+
+        <button onclick="goToBirthday()">
+            Continue 💖
+        </button>
+    </div>
+
+    <script>
+        const game = document.getElementById("game");
+
+        let nextNumber = 1;
+
+        let numbers = [];
+
+        for (let i = 1; i <= 25; i++) {
+            numbers.push(i);
+        }
+
+        numbers.sort(() => Math.random() - 0.5);
+
+        numbers.forEach(number => {
+
+            const box = document.createElement("div");
+
+            box.classList.add("number");
+
+            box.innerText = number;
+
+            box.onclick = function () {
+
+                if (number === nextNumber) {
+
+                    box.classList.add("correct");
+
+                    nextNumber++;
+
+                    if (nextNumber === 26) {
+                        document.getElementById("message").style.display = "block";
+                    }
+
+                } else {
+
+                    alert("Oops! Find number " + nextNumber + " first 😊");
+
+                }
+            };
+
+            game.appendChild(box);
+        });
+
+        function goToBirthday() {
+            window.location.href = "finalbday.html";
+        }
+    </script>
+
+</body>
+</html>
